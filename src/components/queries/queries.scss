@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Open Sans";
+    src: local("Open Sans"),
+        url("../../resources/OpenSans-VariableFont_wdth\,wght.ttf") format("truetype");
+    font-weight: 'medium';
+}
+
+.queries {
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+    width: 232px;
+    height: 252px;
+    grid-template: 252px;
+    border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 10px 0;
+
+    &-item {
+
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+
+        &:hover {
+            background: #F1FCFF
+        }
+    }
+
+
+    &-title {
+        margin: 10px 20px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 1px;
+
+    }
+}
+
+// .item-label:has(.item-checkbox:checked)::before {
+//     border-color: #0b76ef;
+// }
+
+.item {
+    &-label {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            flex-shrink: 0;
+            flex-grow: 0;
+            border: 1px solid #adb5bd;
+            border-radius: 0.25em;
+            margin-right: 0.5em;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+
+
+        }
+
+        &:has(.item-checkbox:checked)::before {
+            border-color: #2196F3;
+            background-image: url('./shape.svg');
+            background-size: 70% 70%;
+        }
+    }
+
+    &-checkbox {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+    }
+
+}

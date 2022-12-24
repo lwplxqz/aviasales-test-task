@@ -1,0 +1,35 @@
+.main {
+    &-filter {
+        width: 168px;
+        text-align: center;
+        background: #FFFFFF;
+        border: 1px solid #DFE5EC;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: #4A4A4A;
+
+        &:first-child {
+            border-radius: 8px 0px 0px 8px;
+            border-right: none;
+        }
+
+        &:last-child {
+            border-radius: 0px 8px 8px 0px;
+            border-left: none;
+        }
+
+        &__active {
+            background: #2196F3;
+            color: #FFFFFF;
+        }
+    }
+
+
+    &-filters {
+        display: flex;
+        flex-direction: row;
+
+    }
+}

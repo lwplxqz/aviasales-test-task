@@ -1,16 +1,19 @@
 /* eslint-disable class-methods-use-this */
 export default class API {
-	API_BASE = 'https://aviasales-test-api.kata.academy';
+    apiBase = 'https://aviasales-test-api.kata.academy'
 
-	getTickets = async () => {
-		const idResponse = await fetch(`${this.API_BASE}/search`);
-		const { searchId } = await idResponse.json();
+    async getSearchId() {
+        const response = await fetch(`${this.apiBase}/search`)
 
-		const response = await fetch(
-			`${this.API_BASE}/tickets?searchId=${searchId}`
-		);
-		const { tickets } = await response.json();
-		console.log(tickets);
-		return tickets;
-	};
+        const data = await response.json()
+        return data
+    }
+
+    async getTickets(searchId) {
+        const response = await fetch(`${this.apiBase}/tickets?searchId=${searchId}`)
+
+
+        return response
+    }
 }
+

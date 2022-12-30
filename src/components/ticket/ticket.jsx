@@ -1,7 +1,8 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
+
+
 import React from 'react';
 import { format } from 'date-fns';
+import PropTypes from 'prop-types'
 
 import './ticket.scss'
 
@@ -47,6 +48,15 @@ function Card({ ticketsData: { price, carrier, segments } }) {
     </li>);
 }
 
+Card.defaultProps = {
+    price: 10,
+    ticketsData: {}
+}
 
+Card.propTypes = {
+    price: PropTypes.number,
+    ticketsData: PropTypes.instanceOf(Object),
+
+}
 
 export default Card;
